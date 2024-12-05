@@ -11,6 +11,7 @@ export default function Page({ params }: { params: Promise<{ botId: string; mode
     <Script
       type="module"
       src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"
+      crossOrigin="anonymous"
       onLoad={() => {
         if (MODES.includes(mode)) {
           //@ts-expect-error: Landbot instance
