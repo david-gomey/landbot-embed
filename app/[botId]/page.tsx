@@ -20,7 +20,7 @@ export default function Page({
       src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"
       onLoad={() => {
         if (MODES.includes(mode)) {
-          //@ts-ignore
+          //@ts-expect-error: Landbot instance
           new window.Landbot[mode]({
             configUrl: `https://storage.googleapis.com/landbot.pro/v3/${botId}/index.json`,
           });
