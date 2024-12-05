@@ -4,15 +4,8 @@ import { use } from 'react';
 
 const MODES = ['Fullpage', 'Livechat', 'Native'];
 
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ botId: string }>;
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
-  const { botId } = use(params);
-  const { mode = 'Fullpage' } = use(searchParams);
+export default function Page({ params }: { params: Promise<{ botId: string; mode: string }> }) {
+  const { botId, mode = 'Fullpage' } = use(params);
 
   return (
     <Script
